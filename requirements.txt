@@ -1,0 +1,10 @@
+aiogram>=3.15,<4
+aiohttp>=3.10,<4
+aiosqlite>=0.20,<1
+edge-tts>=7.0,<8
+fastapi>=0.115,<1
+uvicorn>=0.32,<1
+python-multipart>=0.0.20,<1
+pydantic>=2.9,<3
+pydantic-settings>=2.6,<3
+

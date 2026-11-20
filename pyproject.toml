@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zukko-bot"
+version = "1.0.0"
+description = "O'zbekcha AI repetitor: Feynman darslari, audio va kognitiv diagnostika"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "aiogram>=3.15,<4",
+  "aiohttp>=3.10,<4",
+  "aiosqlite>=0.20,<1",
+  "edge-tts>=7.0,<8",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.32,<1",
+  "python-multipart>=0.0.20,<1",
+  "pydantic>=2.9,<3",
+  "pydantic-settings>=2.6,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-asyncio>=0.24,<1",
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+zukko = "zukko.main:run"
+zukko-web = "zukko.web:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zukko"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+

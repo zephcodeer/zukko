@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2317151f'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='48' fill='%23baf3e0'%3E✳%3C/text%3E%3C/svg%3E">
+  <title>Zukko — O‘zbekcha AI Repetitor</title>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Asosiy navigatsiya">
+      <a class="brand" href="/" aria-label="Zukko bosh sahifa">
+        <span class="brand-mark" data-icon="sparkles"></span>
+        <span>zukko<span class="brand-dot">.</span></span>
+      </a>
+      <div class="side-caption">SENING O‘QUV MAKONING</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-view="home">
+          <span class="nav-icon" data-icon="house"></span> Bosh sahifa
+        </button>
+        <button class="nav-item" data-view="topics">
+          <span class="nav-icon" data-icon="book-open"></span> Mavzular
+        </button>
+        <button class="nav-item" data-view="lesson">
+          <span class="nav-icon" data-icon="sparkles"></span> Mening darsim
+        </button>
+        <button class="nav-item" data-view="analytics">
+          <span class="nav-icon" data-icon="chart-bar"></span> Natijalarim
+        </button>
+      </nav>
+      <div class="side-bottom">
+        <span class="pulse-dot"></span> O‘rganishga tayyormisan?
+        <small id="side-xp-badge">0 XP to‘plandi</small>
+      </div>
+    </aside>
+
+    <div class="main-frame">
+      <header class="topbar">
+        <div class="crumb">
+          <span class="crumb-spark" data-icon="sparkles"></span>
+          <span class="crumb-parent">Zukko Studiyasi</span>
+          <span class="crumb-separator">/</span>
+          <span id="breadcrumb">Bosh sahifa</span>
+        </div>
+        <div class="top-actions">
+          <span class="status-pill" id="capability-status">
+            <span class="status-light"></span> 10 ta tayyor dars
+          </span>
+          <button id="sound-button" class="icon-button" aria-label="Tovush effektlari" title="Tovush effektlari: Yoqilgan">
+            <span data-icon="volume-2"></span>
+          </button>
+          <button id="theme-button" class="icon-button" aria-label="Rang rejimini almashtirish" title="Rang rejimi">
+            <span data-icon="moon"></span>
+          </button>
+          <div class="avatar" id="user-avatar" aria-label="O‘quvchi profili" title="O‘quvchi profili">Z</div>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <!-- VIEW 1: BOSH SAHIFA (HOME) -->
+        <section class="view-panel active enter" id="view-home">
+          <section class="hero enter">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-icon" data-icon="sparkles"></span> FEYNMAN METODIKASI</div>
+              <h1>Qiyin mavzularni<br><em>osonlashtiramiz.</em></h1>
+              <p>Istalgan savolni ber yoki mavzu tanla. Zukko uni sodda metafora bilan tushuntiradi, audio dars qilib beradi va xatolaringni tahlil qiladi.</p>
+              <div class="hero-actions">
+                <button class="hero-button" id="hero-ask">Savol berish <span aria-hidden="true" data-icon="arrow-up-right"></span></button>
+                <button class="secondary-hero-button" id="hero-explore">Mavzularni ko‘rish <span data-icon="book-open"></span></button>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <img class="hero-book" src="/assets/hero-book.png" alt="">
+              <div class="art-label">birga o‘rganamiz <span>↗</span></div>
+            </div>
+          </section>
+
+          <div class="workspace-grid">
+            <div class="content-column">
+              <div class="section-head enter delay-one">
+                <div>
+                  <span class="overline">BOSHLASH UCHUN</span>
+                  <h2>Nimani tushunmayapsan?</h2>
+                </div>
+                <span class="head-flourish" data-icon="sparkles"></span>
+              </div>
+
+              <!-- Quick prompt chips -->
+              <div class="quick-prompts enter delay-one">
+                <span class="quick-title">Tezkor savollar:</span>
+                <button type="button" class="quick-chip" data-prompt="8-sinfman, kvadrat ildiz nimaligini tushunmayapman">√ Kvadrat ildiz</button>
+                <button type="button" class="quick-chip" data-prompt="Pifagor teoremasi qanday ishlaydi?">▲ Pifagor teoremasi</button>
+                <button type="button" class="quick-chip" data-prompt="Fotosintez jarayonini oddiy tushuntir">🌿 Fotosintez</button>
+                <button type="button" class="quick-chip" data-prompt="Nyutonning ikkinchi qonuni formulasi nima?">⚡ Nyuton qonuni</button>
+              </div>
+
+              <form id="ask-form" class="composer enter delay-two">
+                <label for="question-input" class="sr-only">Savolingiz</label>
+                <textarea id="question-input" rows="3" maxlength="2000" placeholder="Masalan: 8-sinfman, kvadrat ildiz nimaligini tushunmayapman..."></textarea>
+                <div class="composer-footer">
+                  <div class="composer-hint"><span class="hint-icon" data-icon="sparkles"></span> Xohlasang ovozda ham so‘ra</div>
+                  <div class="composer-buttons">
+                    <button type="button" id="record-button" class="record-button" aria-label="Ovoz yozish" aria-pressed="false">
+                      <span id="record-icon" data-icon="mic"></span>
+                      <span id="record-label">Ovoz yozish</span>
+                    </button>
+                    <button type="submit" id="send-button" class="send-button">Tushuntir <span data-icon="arrow-up-right"></span></button>
+                  </div>
+                </div>
+              </form>
+              <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+
+              <!-- Home highlights: Top topics -->
+              <div class="home-highlights enter delay-three">
+                <div class="section-head compact">
+                  <div>
+                    <span class="overline">TAVSIYA ETILADIGAN DARSLAR</span>
+                    <h2>Mashhur mavzular</h2>
+                  </div>
+                  <button type="button" class="text-link-btn" id="see-all-topics-btn">Barchasi (10 ta) →</button>
+                </div>
+                <div class="topic-grid home-grid" id="home-topic-grid"></div>
+              </div>
+            </div>
+
+            <aside class="insight-column enter delay-two">
+              <div class="insight-card dark-card">
+                <span class="mini-label">ZUKKO USULI</span>
+                <img class="insight-asset" src="/assets/insight-cube.png" alt="">
+                <h3>Har xato —<br>kashfiyot.</h3>
+                <p>Noto‘g‘ri javobni tanlasang, Zukko aynan qayerda adashganingni ko‘rsatadi.</p>
+                <div class="insight-link">3 bosqichli aqlli test <span>↗</span></div>
+              </div>
+              <div class="stats-card">
+                <span class="overline">BUGUNGI REJA</span>
+                <div class="stat-row">
+                  <div class="stat-icon coral">✦</div>
+                  <div><strong>1 mavzu</strong><span>Yaxshi boshlanish</span></div>
+                  <span class="stat-arrow">↗</span>
+                </div>
+                <div class="stat-row">
+                  <div class="stat-icon blue">♫</div>
+                  <div><strong>1 audio dars</strong><span>Yo‘lda ham tingla</span></div>
+                  <span class="stat-arrow">↗</span>
+                </div>
+                <div class="stat-row">
+                  <div class="stat-icon green">✓</div>
+                  <div><strong>3 ta savol</strong><span>Bilimingni tekshir</span></div>
+                  <span class="stat-arrow">↗</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- VIEW 2: MAVZULAR KATALOGI (TOPICS) -->
+        <section class="view-panel enter" id="view-topics" hidden>
+          <div class="page-header">
+            <div>
+              <span class="overline">BILIMLAR BAZASI</span>
+              <h1 class="page-title">Mavzular Katalogi</h1>
+              <p class="page-subtitle">O‘zbekcha interaktiv Feynman darslari, audio mini-podkastlar va diagnostik testlar.</p>
+            </div>
+            <div class="page-header-badge">
+              <span data-icon="sparkles"></span> 10 ta tayyor dars
+            </div>
+          </div>
+
+          <div class="catalogue-filters">
+            <div class="topic-search-wrap">
+              <span class="search-icon" data-icon="search"></span>
+              <input type="search" id="topic-search" placeholder="Mavzular yoki fanlar bo‘yicha qidirish..." aria-label="Mavzularni qidiring">
+            </div>
+
+            <!-- Subject filters -->
+            <div class="filter-group">
+              <span class="filter-label">Fanlar:</span>
+              <div class="filter-chips" id="filter-chips">
+                <button type="button" class="chip active" data-subject="all">Barchasi</button>
+                <button type="button" class="chip" data-subject="algebra">Algebra</button>
+                <button type="button" class="chip" data-subject="geometriya">Geometriya</button>
+                <button type="button" class="chip" data-subject="fizika">Fizika</button>
+                <button type="button" class="chip" data-subject="biologiya">Biologiya</button>
+                <button type="button" class="chip" data-subject="kimyo">Kimyo</button>
+                <button type="button" class="chip" data-subject="ona tili">Ona tili</button>
+                <button type="button" class="chip" data-subject="ingliz tili">Ingliz tili</button>
+              </div>
+            </div>
+
+            <!-- Grade filters -->
+            <div class="filter-group">
+              <span class="filter-label">Sinf:</span>
+              <div class="filter-chips" id="grade-chips">
+                <button type="button" class="chip active" data-grade="all">Barchasi</button>
+                <button type="button" class="chip" data-grade="5">5-sinf</button>
+                <button type="button" class="chip" data-grade="6">6-sinf</button>
+                <button type="button" class="chip" data-grade="7">7-sinf</button>
+                <button type="button" class="chip" data-grade="8">8-sinf</button>
+                <button type="button" class="chip" data-grade="9">9-sinf</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-grid full-grid" id="topic-grid"></div>
+        </section>
+
+        <!-- VIEW 3: MENING DARSIM (LESSON STUDIO) -->
+        <section class="view-panel enter" id="view-lesson" hidden>
+          <!-- Empty state when no lesson selected -->
+          <div id="lesson-empty" class="empty-studio enter">
+            <div class="empty-icon-box" data-icon="sparkles"></div>
+            <h2>Hozircha dars tanlanmagan</h2>
+            <p>Bosh sahifada savol bering yoki quyidagi mashhur mavzulardan birini tanlab darsni boshlang:</p>
+            <div class="empty-suggestions">
+              <button type="button" class="suggestion-card" data-topic="kvadrat_ildiz">
+                <span class="suggestion-icon" data-icon="radical"></span>
+                <div class="suggestion-info">
+                  <strong>Kvadrat ildiz</strong>
+                  <small>8-sinf · Algebra</small>
+                </div>
+                <span class="suggestion-arrow" data-icon="arrow-up-right"></span>
+              </button>
+              <button type="button" class="suggestion-card" data-topic="pifagor_teoremasi">
+                <span class="suggestion-icon" data-icon="triangle"></span>
+                <div class="suggestion-info">
+                  <strong>Pifagor teoremasi</strong>
+                  <small>8-sinf · Geometriya</small>
+                </div>
+                <span class="suggestion-arrow" data-icon="arrow-up-right"></span>
+              </button>
+              <button type="button" class="suggestion-card" data-topic="fotosintez">
+                <span class="suggestion-icon" data-icon="leaf"></span>
+                <div class="suggestion-info">
+                  <strong>Fotosintez</strong>
+                  <small>6-sinf · Biologiya</small>
+                </div>
+                <span class="suggestion-arrow" data-icon="arrow-up-right"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Lesson Studio -->
+          <div id="lesson-active" hidden>
+            <div class="lesson-title-row">
+              <div>
+                <span class="overline">SENING DARSING</span>
+                <h1 id="lesson-title" class="lesson-main-title">Mavzu</h1>
+                <span id="lesson-meta" class="lesson-meta"></span>
+              </div>
+              <div class="lesson-actions">
+                <button type="button" id="copy-summary-btn" class="action-pill-btn" title="Konspekt matnini nusxalash">
+                  <span data-icon="copy"></span> Nusxa olish
+                </button>
+                <button type="button" id="download-summary-btn" class="action-pill-btn" title="Feynman konspektini yuklab olish">
+                  <span data-icon="download"></span> Konspekt (.md)
+                </button>
+                <span class="lesson-badge">✦ Zukko darsi</span>
+              </div>
+            </div>
+
+            <!-- Feynman 3-part cards -->
+            <div class="lesson-blocks">
+              <article class="lesson-card metaphor">
+                <div class="lesson-card-icon" data-icon="lightbulb"></div>
+                <div>
+                  <div class="card-tag">01 / TASAVVUR QIL</div>
+                  <h3>Ko‘z oldingga keltir</h3>
+                  <p id="metaphor-text"></p>
+                </div>
+              </article>
+              <article class="lesson-card rule">
+                <div class="lesson-card-icon" data-icon="variable"></div>
+                <div>
+                  <div class="card-tag">02 / QOIDA VA FORMULA</div>
+                  <h3>Formula va mantiq</h3>
+                  <p id="rule-text"></p>
+                </div>
+              </article>
+              <article class="lesson-card real">
+                <div class="lesson-card-icon" data-icon="arrow-up-right"></div>
+                <div>
+                  <div class="card-tag">03 / HAYOTDA QO‘LLASH</div>
+                  <h3>Qayerda kerak bo‘ladi?</h3>
+                  <p id="real-text"></p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Mini Podcast Player -->
+            <div class="audio-card">
+              <div class="audio-icon" data-icon="headphones"></div>
+              <div class="audio-copy">
+                <strong>O‘zbekcha Mini-Podkast</strong>
+                <span id="audio-status">Audio dars yuklanmoqda...</span>
+              </div>
+              <div class="speed-selector" id="speed-selector" aria-label="Audio tezligi">
+                <button type="button" class="speed-btn" data-speed="0.8">0.8x</button>
+                <button type="button" class="speed-btn active" data-speed="1">1x</button>
+                <button type="button" class="speed-btn" data-speed="1.25">1.25x</button>
+                <button type="button" class="speed-btn" data-speed="1.5">1.5x</button>
+              </div>
+              <audio id="podcast-player" controls preload="none" aria-label="O‘zbekcha audio dars"></audio>
+            </div>
+
+            <!-- Diagnostic Quiz Panel -->
+            <section class="quiz-panel" id="quiz-panel">
+              <div class="quiz-top">
+                <div class="quiz-badge-wrap">
+                  <span class="overline">BILIMINGNI SINAB KO‘R</span>
+                  <span class="quiz-tag">Diagnostik test</span>
+                </div>
+                <span id="quiz-count">01 / 03</span>
+              </div>
+              <div class="quiz-progress"><span id="quiz-progress-fill"></span></div>
+              <h3 id="quiz-prompt"></h3>
+              <div class="quiz-options" id="quiz-options"></div>
+              <div id="quiz-feedback" class="quiz-feedback" hidden></div>
+              <div id="quiz-summary" class="quiz-summary" hidden>
+                <div class="quiz-summary-content">
+                  <strong id="quiz-score"></strong>
+                  <p id="quiz-review"></p>
+                </div>
+                <div class="quiz-summary-actions">
+                  <button type="button" id="retake-quiz-btn" class="retake-btn"><span data-icon="rotate-cw"></span> Qayta topshirish</button>
+                </div>
+              </div>
+              <button id="next-question" class="next-button" hidden>Keyingi savol <span>→</span></button>
+            </section>
+          </div>
+        </section>
+
+        <!-- VIEW 4: NATIJALARIM (ANALYTICS & MASTERY) -->
+        <section class="view-panel enter" id="view-analytics" hidden>
+          <div class="page-header">
+            <div>
+              <span class="overline">O‘QUV MONITORINGI</span>
+              <h1 class="page-title">Mening Natijalarim</h1>
+              <p class="page-subtitle">Sening ta’lim o‘sishing, aniqlik ko‘rsatkichlari va o‘rganilgan mavzular tahlili.</p>
+            </div>
+            <div class="analytics-actions">
+              <button type="button" id="refresh-analytics" class="refresh-pill-btn"><span data-icon="rotate-cw"></span> Yangilash</button>
+              <button type="button" id="reset-analytics" class="reset-pill-btn" title="Barcha sinov natijalarini tozalash">Tarixni tozalash</button>
+            </div>
+          </div>
+
+          <div class="analytics-cards">
+            <div class="stat-card-box">
+              <span class="stat-box-label">Jami savollar</span>
+              <strong class="stat-box-num" id="stat-total">0</strong>
+              <span class="stat-box-sub">Sinovdan o‘tgan</span>
+            </div>
+            <div class="stat-card-box">
+              <span class="stat-box-label">Aniqlik darajasi</span>
+              <strong class="stat-box-num accent" id="stat-accuracy">0%</strong>
+              <span class="stat-box-sub" id="stat-correct-count">0 ta to‘g‘ri</span>
+            </div>
+            <div class="stat-card-box">
+              <span class="stat-box-label">To‘plangan XP</span>
+              <strong class="stat-box-num xp-accent" id="stat-xp">0 XP</strong>
+              <span class="stat-box-sub">O‘quv darajasi: Yangi boshlovchi</span>
+            </div>
+            <div class="stat-card-box">
+              <span class="stat-box-label">O‘rganilgan mavzular</span>
+              <strong class="stat-box-num" id="stat-topics">0</strong>
+              <span class="stat-box-sub">Mustahkamlangan mavzu</span>
+            </div>
+          </div>
+
+          <div class="analytics-grid">
+            <div class="history-table-box">
+              <div class="history-head">
+                <div>
+                  <h3>Mavzular bo‘yicha o‘zlashtirish</h3>
+                  <span class="history-sub">Oxirgi test urinishlari va natijalar</span>
+                </div>
+              </div>
+              <div id="analytics-list" class="analytics-list"></div>
+            </div>
+
+            <div class="skills-breakdown-box">
+              <h3>Fikr va Tavsiyalar</h3>
+              <div class="advice-card">
+                <span class="advice-icon" data-icon="sparkles"></span>
+                <strong>Feynman qoidasi:</strong>
+                <p>Bir mavzuni chindan tushunganingni bilish uchun uni 10 yoshli bolaga oddiy so‘zlar bilan tushuntirib ko‘r.</p>
+              </div>
+              <div class="advice-card">
+                <span class="advice-icon" data-icon="lightbulb"></span>
+                <strong>Xatolardan qo‘rqma:</strong>
+                <p>Noto‘g‘ri javob berganingda diagnostik feedbackni diqqat bilan o‘qi — aynan shu yerda haqiqiy o‘rganish sodir bo‘ladi.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© 2026 Zukko. O‘zbekcha AI ta’lim ekotizimi.</span>
+        <span>Har savol — yangi kashfiyot ✳</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Mobile bottom navigation -->
+  <nav class="mobile-nav" aria-label="Mobil navigatsiya">
+    <button class="mobile-item active" data-view="home"><span data-icon="house"></span>Bosh sahifa</button>
+    <button class="mobile-item" data-view="topics"><span data-icon="book-open"></span>Mavzular</button>
+    <button class="mobile-item" data-view="lesson"><span data-icon="sparkles"></span>Darsim</button>
+    <button class="mobile-item" data-view="analytics"><span data-icon="chart-bar"></span>Natijalarim</button>
+  </nav>
+
+  <!-- Celebratory canvas -->
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Toast notification system -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

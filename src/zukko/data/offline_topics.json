@@ -1,0 +1,292 @@
+{
+  "kvadrat_ildiz": {
+    "intent": {"grade": 8, "subject": "algebra", "topic": "kvadrat ildiz", "topic_key": "kvadrat_ildiz"},
+    "explanation": {
+      "metaphor": "Kvadrat ildiz — detektiv. U 25 soniga qarab: ‘Qaysi bir xil egizak sonlar ko‘payib seni hosil qilgan?’ deb so‘raydi. 5 × 5 = 25, demak √25 = 5.",
+      "rule": "√a = b degani b × b = a. Masalan: √36 = 6, chunki 6 × 6 = 36.",
+      "real_life": "Kvadrat hovlining yuzi 64 m² bo‘lsa, bir tomonini √64 = 8 metr deb topamiz."
+    },
+    "podcast_text": "Kvadrat ildizni sonni ikkiga bo‘lish deb o‘ylama. Uni detektiv kabi tasavvur qil. Masalan, yigirma besh soni oldida turib, qaysi bir xil ikki son ko‘payib yigirma besh bo‘ladi, deb so‘raymiz. Javob besh, chunki besh karra besh yigirma besh. Demak, yigirma beshning kvadrat ildizi besh. Bu qoida kvadrat maydonning tomonini topishda ham juda kerak bo‘ladi.",
+    "quiz": [
+      {"prompt": "√16 = ?", "options": [
+        {"label": "A", "text": "8", "misconception": "Sen 16 ni 2 ga bo‘lding. Kvadrat ildiz 2 ga bo‘lish emas; o‘ziga ko‘payganda 16 beradigan sonni topamiz: 4 × 4 = 16."},
+        {"label": "B", "text": "4", "misconception": null},
+        {"label": "C", "text": "32", "misconception": "Sen 16 ni 2 ga ko‘paytirding. Ildiz amali ko‘paytirish emas: 4 × 4 = 16."},
+        {"label": "D", "text": "2", "misconception": "Sen ildiz belgisi yonidagi ko‘rinishga aldanib 2 ni tanlading. Tekshir: 2 × 2 = 4, 4 × 4 = 16."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: 4 × 4 = 16, shuning uchun √16 = 4."},
+      {"prompt": "√81 = ?", "options": [
+        {"label": "A", "text": "9", "misconception": null},
+        {"label": "B", "text": "40.5", "misconception": "81 ni 2 ga bo‘lish ildiz olish emas. Bir xil sonni izla: 9 × 9 = 81."},
+        {"label": "C", "text": "18", "misconception": "Sen 9 ni ikki marta qo‘shding. Ildizda qo‘shish emas, o‘ziga ko‘paytirish tekshiriladi."},
+        {"label": "D", "text": "8", "misconception": "8 yaqin ko‘rinsa ham 8 × 8 = 64. Aynan 81 uchun 9 × 9 kerak."}
+      ], "correct": "A", "success_feedback": "Ajoyib: 9 ning kvadrati 81."},
+      {"prompt": "Kvadratning yuzi 121 cm². Tomoni necha cm?", "options": [
+        {"label": "A", "text": "60.5 cm", "misconception": "Yuzani 2 ga bo‘lding, lekin kvadratda yuza = tomon × tomon. Tomon √121 bo‘ladi."},
+        {"label": "B", "text": "22 cm", "misconception": "11 + 11 = 22 perimetrning yarmi bo‘lishi mumkin, ammo tomonning o‘zi 11 cm."},
+        {"label": "C", "text": "11 cm", "misconception": null},
+        {"label": "D", "text": "121 cm", "misconception": "Yuza bilan uzunlikni bir xil deb olding. 121 cm² yuzadan tomon √121 = 11 cm chiqadi."}
+      ], "correct": "C", "success_feedback": "To‘g‘ri: 11 × 11 = 121 cm²."}
+    ]
+  },
+  "pifagor_teoremasi": {
+    "intent": {"grade": 8, "subject": "geometriya", "topic": "Pifagor teoremasi", "topic_key": "pifagor_teoremasi"},
+    "explanation": {
+      "metaphor": "To‘g‘ri burchakli uchburchakning uch tomonida kvadrat uylar bor deb tasavvur qil. Ikki kichik uyning maydoni qo‘shilsa, eng katta — gipotenuzadagi uyning maydoniga teng.",
+      "rule": "Katetlar a va b, gipotenuza c bo‘lsa: a² + b² = c².",
+      "real_life": "Devor balandligi va narvon tagining devordan masofasi ma’lum bo‘lsa, kerakli narvon uzunligini topamiz."
+    },
+    "podcast_text": "Pifagor teoremasi faqat to‘g‘ri burchakli uchburchakda ishlaydi. Ikki qisqa tomon katet, eng uzun va to‘g‘ri burchak qarshisidagi tomon gipotenuza deyiladi. Katetlar kvadratlari yig‘indisi gipotenuza kvadratiga teng: a kvadrat qo‘shuv b kvadrat, teng c kvadrat. Masalan, tomonlar uch va to‘rt bo‘lsa, gipotenuza besh, chunki to‘qqiz qo‘shuv o‘n olti yigirma beshga teng.",
+    "quiz": [
+      {"prompt": "Katetlar 3 va 4. Gipotenuza nechaga teng?", "options": [
+        {"label": "A", "text": "7", "misconception": "Katetlarni shunchaki qo‘shding. Pifagorda avval kvadratlar qo‘shiladi: 9 + 16 = 25, keyin √25 olinadi."},
+        {"label": "B", "text": "5", "misconception": null},
+        {"label": "C", "text": "12", "misconception": "Katetlarni ko‘paytirish yuzaga aloqador, gipotenuzaga emas."},
+        {"label": "D", "text": "25", "misconception": "25 — gipotenuzaning kvadrati. Oxirida √25 = 5 olishni unutding."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: 3² + 4² = 25, demak c = 5."},
+      {"prompt": "Gipotenuza 13, bir katet 5. Ikkinchi katet?", "options": [
+        {"label": "A", "text": "8", "misconception": "13 − 5 ni to‘g‘ridan-to‘g‘ri ayirding. Kvadratlarda hisobla: 13² − 5² = 144."},
+        {"label": "B", "text": "18", "misconception": "Tomonlarni qo‘shish kerak emas; noma’lum katet kvadrati c² − a²."},
+        {"label": "C", "text": "12", "misconception": null},
+        {"label": "D", "text": "144", "misconception": "144 — katetning kvadrati. Uning ildizi 12."}
+      ], "correct": "C", "success_feedback": "Ha: √(169 − 25) = √144 = 12."},
+      {"prompt": "Qaysi uchlik to‘g‘ri burchakli uchburchak hosil qiladi?", "options": [
+        {"label": "A", "text": "2, 3, 4", "misconception": "Eng katta tomon 4: 2² + 3² = 13, ammo 4² = 16. Teng emas."},
+        {"label": "B", "text": "5, 12, 13", "misconception": null},
+        {"label": "C", "text": "4, 5, 6", "misconception": "4² + 5² = 41, lekin 6² = 36. Shuning uchun to‘g‘ri burchakli emas."},
+        {"label": "D", "text": "3, 3, 3", "misconception": "Bu teng tomonli uchburchak; uning burchaklari 60 daraja, 90 emas."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: 5² + 12² = 25 + 144 = 169 = 13²."}
+    ]
+  },
+  "nyuton_ikkinchi_qonuni": {
+    "intent": {"grade": 8, "subject": "fizika", "topic": "Nyutonning ikkinchi qonuni", "topic_key": "nyuton_ikkinchi_qonuni"},
+    "explanation": {
+      "metaphor": "Bo‘sh aravachani itarish oson, to‘la aravachani tezlatish qiyin. Bir xil tezlanish uchun og‘irroq aravachaga ko‘proq kuch kerak.",
+      "rule": "Natijaviy kuch F = m × a. Kuch — nyuton, massa — kg, tezlanish — m/s².",
+      "real_life": "Mashina dvigateli kuchi va massa uning qanchalik tez tezlanishini belgilaydi."
+    },
+    "podcast_text": "Nyutonning ikkinchi qonuni kuch, massa va tezlanishni bog‘laydi. Formula juda qisqa: F teng m karra a. Ya’ni kuch massa bilan tezlanish ko‘paytmasi. Bo‘sh savdo aravachasini tezlatish oson, yuklanganini esa qiyin, chunki massasi katta. Ikki kilogramm jismga uch metr taqsim sekund kvadrat tezlanish bermoqchi bo‘lsak, olti nyuton kuch kerak bo‘ladi.",
+    "quiz": [
+      {"prompt": "m = 2 kg, a = 3 m/s². F = ?", "options": [
+        {"label": "A", "text": "6 N", "misconception": null},
+        {"label": "B", "text": "5 N", "misconception": "Massa va tezlanishni qo‘shding. Formula F = m × a, demak 2 × 3."},
+        {"label": "C", "text": "1.5 N", "misconception": "Tezlanishni massaga bo‘lding. Kuch uchun ularni ko‘paytirish kerak."},
+        {"label": "D", "text": "0.67 N", "misconception": "Massani tezlanishga bo‘lish bu formulaga mos emas; F = 2 × 3."}
+      ], "correct": "A", "success_feedback": "To‘g‘ri: F = 2 × 3 = 6 N."},
+      {"prompt": "F = 20 N, m = 4 kg. Tezlanish?", "options": [
+        {"label": "A", "text": "80 m/s²", "misconception": "Kuch va massani ko‘paytirding. a ni topishda a = F / m."},
+        {"label": "B", "text": "16 m/s²", "misconception": "20 dan 4 ni ayirish fizik bog‘lanishni bermaydi; 20 / 4 hisoblanadi."},
+        {"label": "C", "text": "5 m/s²", "misconception": null},
+        {"label": "D", "text": "0.2 m/s²", "misconception": "Bo‘lish tartibini teskariga olding: m/F emas, F/m."}
+      ], "correct": "C", "success_feedback": "Ha: a = 20 / 4 = 5 m/s²."},
+      {"prompt": "Bir xil kuchda massa ikki baravar oshsa, tezlanish nima bo‘ladi?", "options": [
+        {"label": "A", "text": "Ikki baravar oshadi", "misconception": "F o‘zgarmasa a = F/m. Maxrajdagi massa oshsa tezlanish kamayadi."},
+        {"label": "B", "text": "O‘zgarmaydi", "misconception": "Massa tezlanishga ta’sir qiladi; og‘irroq jismni ayni kuch kamroq tezlatadi."},
+        {"label": "C", "text": "To‘rt baravar kamayadi", "misconception": "Bu yerda kvadrat bog‘lanish yo‘q. Massa 2 marta oshsa tezlanish 2 marta kamayadi."},
+        {"label": "D", "text": "Ikki baravar kamayadi", "misconception": null}
+      ], "correct": "D", "success_feedback": "To‘g‘ri: a = F/m, shuning uchun massa 2× bo‘lsa a 2× kamayadi."}
+    ]
+  },
+  "fotosintez": {
+    "intent": {"grade": 6, "subject": "biologiya", "topic": "fotosintez", "topic_key": "fotosintez"},
+    "explanation": {
+      "metaphor": "Barg — quyosh energiyasida ishlaydigan kichik oshxona. U suv va havodagi karbonat angidridni shakarli oziq hamda kislorodga aylantiradi.",
+      "rule": "6CO₂ + 6H₂O + yorug‘lik → C₆H₁₂O₆ + 6O₂. Jarayon xloroplastdagi xlorofill yordamida boradi.",
+      "real_life": "O‘simliklar oziq zanjirining boshlanishi va atmosferadagi kislorodning katta manbaidir."
+    },
+    "podcast_text": "Fotosintezni barg ichidagi quyosh oshxonasi deb tasavvur qil. Ildizdan suv keladi, barg havodan karbonat angidrid oladi, xlorofill esa quyosh nurini tutadi. Shu energiya yordamida o‘simlik glyukoza, ya’ni o‘z oziğini tayyorlaydi va kislorod ajratadi. Demak o‘simlik tuproqni yeymaydi; oziqni o‘zi yasaydi. Biz nafas oladigan kislorodning katta qismi ham shu ajoyib jarayondan keladi.",
+    "quiz": [
+      {"prompt": "Fotosintez uchun asosiy energiya manbai nima?", "options": [
+        {"label": "A", "text": "Tuproq", "misconception": "Tuproq mineral va suv beradi, lekin jarayon energiyasining manbai quyosh nuridir."},
+        {"label": "B", "text": "Quyosh nuri", "misconception": null},
+        {"label": "C", "text": "Kislorod", "misconception": "Kislorod fotosintezning asosiy mahsuloti, energiya manbai emas."},
+        {"label": "D", "text": "Shamol", "misconception": "Shamol gaz almashinuviga yordam berishi mumkin, ammo energiya bermaydi."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: xlorofill quyosh nurini tutadi."},
+      {"prompt": "O‘simlik fotosintezda qaysi gazni yutadi?", "options": [
+        {"label": "A", "text": "Kislorod", "misconception": "Kislorod asosan tashqariga chiqariladi; o‘simlik karbonat angidridni yutadi."},
+        {"label": "B", "text": "Azot", "misconception": "Havoda azot ko‘p, ammo fotosintez formulasi uchun CO₂ kerak."},
+        {"label": "C", "text": "Karbonat angidrid", "misconception": null},
+        {"label": "D", "text": "Vodorod", "misconception": "Vodorod alohida gaz sifatida olinmaydi; zarur vodorod suv tarkibidan keladi."}
+      ], "correct": "C", "success_feedback": "Ha: barg CO₂ ni yutib, O₂ chiqaradi."},
+      {"prompt": "Fotosintez asosan qaysi organoidda kechadi?", "options": [
+        {"label": "A", "text": "Yadro", "misconception": "Yadro hujayrani boshqaradi, ammo fotosintez xloroplastda kechadi."},
+        {"label": "B", "text": "Mitoxondriya", "misconception": "Mitoxondriya energiya ajratish bilan mashhur; quyosh energiyasini tutadigan organoid xloroplast."},
+        {"label": "C", "text": "Vakuola", "misconception": "Vakuola suv va moddalarni saqlaydi, fotosintez qilmaydi."},
+        {"label": "D", "text": "Xloroplast", "misconception": null}
+      ], "correct": "D", "success_feedback": "To‘g‘ri: xloroplast ichidagi xlorofill yorug‘likni yutadi."}
+    ]
+  },
+  "kasrlar": {
+    "intent": {"grade": 5, "subject": "matematika", "topic": "oddiy kasrlar", "topic_key": "kasrlar"},
+    "explanation": {
+      "metaphor": "Pitsani 8 teng bo‘lakka bo‘lib, 3 tasini olsang 3/8 bo‘ladi. Pastdagi son jami teng bo‘laklar, yuqoridagi son olingan bo‘laklar.",
+      "rule": "a/b da a — surat, b — maxraj; b nol bo‘la olmaydi. Teng maxrajli kasrlar qo‘shilganda suratlar qo‘shiladi.",
+      "real_life": "Retseptdagi yarim stakan, chegirmadagi chorak narx va vaqtning uchdan birini kasr bilan ifodalaymiz."
+    },
+    "podcast_text": "Kasrni bo‘lingan pitsa deb o‘yla. Maxraj, ya’ni pastdagi son pitsa nechta teng bo‘lakka bo‘linganini aytadi. Surat, ya’ni yuqoridagi son esa nechta bo‘lak olinganini ko‘rsatadi. Masalan, sakkiz bo‘lakdan uchtasi uch taqsim sakkiz. Maxrajlar teng bo‘lsa, kasrlarni qo‘shishda faqat suratlarni qo‘shamiz. Ikki taqsim sakkiz va uch taqsim sakkiz, jami besh taqsim sakkiz bo‘ladi.",
+    "quiz": [
+      {"prompt": "3/7 kasrida maxraj qaysi son?", "options": [
+        {"label": "A", "text": "3", "misconception": "3 yuqoridagi surat. Maxraj kasr chizig‘ining pastida: 7."},
+        {"label": "B", "text": "7", "misconception": null},
+        {"label": "C", "text": "10", "misconception": "Surat va maxrajni qo‘shish shart emas. Maxraj bevosita pastdagi 7."},
+        {"label": "D", "text": "4", "misconception": "7 − 3 hisoblash kerak emas; maxraj yozuvdagi pastki son."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: 7 — jami teng bo‘laklar soni."},
+      {"prompt": "2/9 + 4/9 = ?", "options": [
+        {"label": "A", "text": "6/18", "misconception": "Maxrajlar teng bo‘lsa ularni qo‘shmaymiz; maxraj 9 bo‘lib qoladi."},
+        {"label": "B", "text": "6/9", "misconception": null},
+        {"label": "C", "text": "8/9", "misconception": "Suratlarni ko‘paytirding. Qo‘shishda 2 + 4 = 6."},
+        {"label": "D", "text": "2/9", "misconception": "Ikkinchi kasrni hisobga olmading. Suratlar 2 + 4 bo‘ladi."}
+      ], "correct": "B", "success_feedback": "Ha: maxraj 9, surat 2 + 4 = 6."},
+      {"prompt": "Qaysi kasr 1/2 ga teng?", "options": [
+        {"label": "A", "text": "2/3", "misconception": "Surat va maxrajga bir xil son ko‘paytirilmagan. 1/2 = 2/4."},
+        {"label": "B", "text": "3/5", "misconception": "3/5 = 0.6, yarim esa 0.5."},
+        {"label": "C", "text": "2/4", "misconception": null},
+        {"label": "D", "text": "1/4", "misconception": "Bir chorak yarimdan ikki marta kichik; 1/2 ni 2/4 deb yozish mumkin."}
+      ], "correct": "C", "success_feedback": "To‘g‘ri: surat va maxrajni 2 ga ko‘paytirsak 2/4 chiqadi."}
+    ]
+  },
+  "chiziqli_tenglama": {
+    "intent": {"grade": 7, "subject": "algebra", "topic": "chiziqli tenglama", "topic_key": "chiziqli_tenglama"},
+    "explanation": {
+      "metaphor": "Tenglama — muvozanatdagi tarozi. Bir tomonda nima qilsang, muvozanat buzilmasligi uchun ikkinchi tomonda ham aynan shuni qilasan.",
+      "rule": "ax + b = c bo‘lsa, avval b ni ikki tomondan ayiramiz, keyin a ga bo‘lamiz: x = (c − b)/a.",
+      "real_life": "Taksi boshlang‘ich narxi va har kilometr haqidan bosib o‘tilgan masofani topish tenglamaga misol."
+    },
+    "podcast_text": "Chiziqli tenglama taroziga o‘xshaydi. Chap va o‘ng tomon teng turadi. Bir tomondan uchni ayirsang, ikkinchi tomondan ham uchni ayirish kerak. Masalan, ikki iks qo‘shuv uch teng o‘n bir. Avval uchni ikki tomondan ayiramiz: ikki iks teng sakkiz. Keyin ikki tomonni ikkiga bo‘lamiz va iks to‘rt chiqadi. Javobni o‘rniga qo‘yib tekshirish eng yaxshi odat.",
+    "quiz": [
+      {"prompt": "x + 5 = 12. x = ?", "options": [
+        {"label": "A", "text": "17", "misconception": "5 ni yana qo‘shding. x ni yolg‘iz qoldirish uchun ikki tomondan 5 ni ayiramiz."},
+        {"label": "B", "text": "7", "misconception": null},
+        {"label": "C", "text": "12", "misconception": "5 ni yo‘qotmading. 12 − 5 = 7."},
+        {"label": "D", "text": "5", "misconception": "Tenglamadagi ma’lum sonni x deb olding. Tekshir: 5 + 5 o‘n, 12 emas."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: 7 + 5 = 12."},
+      {"prompt": "3x = 18. x = ?", "options": [
+        {"label": "A", "text": "54", "misconception": "18 ni 3 ga ko‘paytirding. 3 × x ni bekor qilish uchun 3 ga bo‘lish kerak."},
+        {"label": "B", "text": "15", "misconception": "3 ni ayirish noto‘g‘ri; 3x bu 3 bilan x ning ko‘paytmasi."},
+        {"label": "C", "text": "6", "misconception": null},
+        {"label": "D", "text": "3", "misconception": "Ko‘paytuvchi 3 ni javob deb olding. 3 × 3 = 9, 18 emas."}
+      ], "correct": "C", "success_feedback": "Ha: 18 / 3 = 6."},
+      {"prompt": "2x + 3 = 11. x = ?", "options": [
+        {"label": "A", "text": "4", "misconception": null},
+        {"label": "B", "text": "7", "misconception": "11 − 3 = 8 dan keyin 2 ga bo‘lishni unutding."},
+        {"label": "C", "text": "5.5", "misconception": "11 ni darhol 2 ga bo‘lding, ammo avval +3 ni ikki tomondan ayirish kerak."},
+        {"label": "D", "text": "8", "misconception": "Bu 2x ning qiymati. x ni topish uchun 8 / 2 = 4 qil."}
+      ], "correct": "A", "success_feedback": "To‘g‘ri: 2 × 4 + 3 = 11."}
+    ]
+  },
+  "atom_tuzilishi": {
+    "intent": {"grade": 7, "subject": "kimyo", "topic": "atom tuzilishi", "topic_key": "atom_tuzilishi"},
+    "explanation": {
+      "metaphor": "Atomni juda kichik Quyosh tizimiga o‘xshatish mumkin: markazda zich yadro, uning atrofida elektron bulut joylashadi.",
+      "rule": "Proton + zaryadli, neytron zaryadsiz, elektron − zaryadli. Neytral atomda protonlar soni elektronlar soniga teng.",
+      "real_life": "Materialning elektr o‘tkazishi, kimyoviy reaksiyalari va ion hosil qilishi elektronlariga bog‘liq."
+    },
+    "podcast_text": "Atom moddaning juda kichik qurilish g‘ishti. Uning markazida yadro bor. Yadroda musbat zaryadli protonlar va zaryadsiz neytronlar joylashadi. Manfiy zaryadli elektronlar esa yadro atrofidagi elektron bulutda bo‘ladi. Neytral atomda protonlar va elektronlar soni teng, shuning uchun umumiy zaryad nol. Elementning kimligini aynan protonlar soni belgilaydi: proton soni o‘zgarsa, element ham o‘zgaradi.",
+    "quiz": [
+      {"prompt": "Qaysi zarracha musbat zaryadli?", "options": [
+        {"label": "A", "text": "Elektron", "misconception": "Elektron manfiy zaryadli. Musbat zaryad protonda."},
+        {"label": "B", "text": "Proton", "misconception": null},
+        {"label": "C", "text": "Neytron", "misconception": "Neytronning nomidagi ‘neytral’ni esla: uning zaryadi yo‘q."},
+        {"label": "D", "text": "Yadro", "misconception": "Yadro joy, alohida zarracha emas; undagi proton musbat zaryadli."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: proton +1 zaryadga ega."},
+      {"prompt": "Neytral atomda 8 proton bo‘lsa, nechta elektron bor?", "options": [
+        {"label": "A", "text": "16", "misconception": "Proton va elektronlarni qo‘shding. Neytral bo‘lishi uchun ularning soni teng bo‘ladi."},
+        {"label": "B", "text": "0", "misconception": "Elektronsiz zarracha kuchli musbat ion bo‘lardi, neytral atom emas."},
+        {"label": "C", "text": "8", "misconception": null},
+        {"label": "D", "text": "4", "misconception": "Yarmiga bo‘lishga sabab yo‘q. +8 zaryadni −8 zaryad muvozanatlaydi."}
+      ], "correct": "C", "success_feedback": "Ha: 8 proton va 8 elektron zaryadni tenglashtiradi."},
+      {"prompt": "Element turini qaysi son belgilaydi?", "options": [
+        {"label": "A", "text": "Protonlar soni", "misconception": null},
+        {"label": "B", "text": "Neytronlar soni", "misconception": "Neytron soni o‘zgarsa izotop o‘zgaradi, elementning o‘zi emas."},
+        {"label": "C", "text": "Elektron qavatlar soni", "misconception": "Qavatlar davr haqida ma’lumot beradi, ammo atom raqami protonlar sonidir."},
+        {"label": "D", "text": "Atomning hajmi", "misconception": "Hajm elementni yagona aniqlamaydi; protonlar soni aniqlaydi."}
+      ], "correct": "A", "success_feedback": "To‘g‘ri: atom raqami = protonlar soni."}
+    ]
+  },
+  "suv_aylanishi": {
+    "intent": {"grade": 5, "subject": "tabiiy fan", "topic": "tabiatda suv aylanishi", "topic_key": "suv_aylanishi"},
+    "explanation": {
+      "metaphor": "Suv Yer bo‘ylab tugamaydigan sayohatchi: dengizdan osmonga ko‘tariladi, bulut bo‘lib yig‘iladi, yomg‘ir bo‘lib qaytadi.",
+      "rule": "Bug‘lanish → kondensatsiya → yog‘in → to‘planish va oqim. Quyosh jarayonning asosiy energiya manbai.",
+      "real_life": "Aylanish chuchuk suvni yangilaydi, ob-havoni shakllantiradi va ekotizimlarni suv bilan ta’minlaydi."
+    },
+    "podcast_text": "Suv tabiatda doimiy sayohat qiladi. Quyosh dengiz, ko‘l va tuproqdagi suvni isitadi, u bug‘lanib havoga ko‘tariladi. Yuqorida havo sovuqroq bo‘lgani uchun bug‘ mayda tomchilarga aylanadi, bu kondensatsiya va bulut hosil bo‘lishidir. Tomchilar og‘irlashsa yomg‘ir yoki qor bo‘lib tushadi. Suv yana daryo, ko‘l, yer osti va okeanlarga qaytadi. Shunday qilib aylanish qayta boshlanadi.",
+    "quiz": [
+      {"prompt": "Suyuqlikning bug‘ga aylanishi nima deyiladi?", "options": [
+        {"label": "A", "text": "Kondensatsiya", "misconception": "Kondensatsiya aksincha: bug‘ning suyuqlikka aylanishi."},
+        {"label": "B", "text": "Bug‘lanish", "misconception": null},
+        {"label": "C", "text": "Yog‘in", "misconception": "Yog‘in suvning bulutdan yerga tushish bosqichi."},
+        {"label": "D", "text": "Muzlash", "misconception": "Muzlash suyuqlikdan qattiq holatga o‘tishdir, bug‘ga emas."}
+      ], "correct": "B", "success_feedback": "To‘g‘ri: issiqlik suvni bug‘lantiradi."},
+      {"prompt": "Bulut hosil bo‘lishiga qaysi jarayon sabab?", "options": [
+        {"label": "A", "text": "Kondensatsiya", "misconception": null},
+        {"label": "B", "text": "Erish", "misconception": "Erish qattiq moddaning suyuqlikka aylanishi; bulut bug‘ning sovishidan hosil bo‘ladi."},
+        {"label": "C", "text": "Oqim", "misconception": "Oqim suvni yer yuzida tashiydi, bulut yaratmaydi."},
+        {"label": "D", "text": "Shimish", "misconception": "Tuproq suvni shimadi, ammo bulut havodagi bug‘ kondensatsiyasidan paydo bo‘ladi."}
+      ], "correct": "A", "success_feedback": "Ha: sovigan bug‘ mayda tomchilarga aylanadi."},
+      {"prompt": "Suv aylanishini asosan nima harakatga keltiradi?", "options": [
+        {"label": "A", "text": "Oy nuri", "misconception": "Oy suv ko‘tarilishiga ta’sir qiladi, lekin aylanish energiyasi asosan Quyoshdan."},
+        {"label": "B", "text": "Shamol", "misconception": "Shamol bulutlarni ko‘chiradi, ammo bug‘lanish energiyasini Quyosh beradi."},
+        {"label": "C", "text": "Quyosh energiyasi", "misconception": null},
+        {"label": "D", "text": "Tuproq", "misconception": "Tuproq suvni saqlaydi va shimadi; jarayonni harakatga keltiruvchi energiya Quyoshniki."}
+      ], "correct": "C", "success_feedback": "To‘g‘ri: Quyosh suyuq suvga bug‘lanish energiyasini beradi."}
+    ]
+  },
+  "gap_bolaklari": {
+    "intent": {"grade": 6, "subject": "ona tili", "topic": "gap bo‘laklari", "topic_key": "gap_bolaklari"},
+    "explanation": {
+      "metaphor": "Gap — kichik spektakl: ega bosh qahramon, kesim uning nima qilganini aytadi, qolgan bo‘laklar voqeaning qayerda, qachon va qandayligini to‘ldiradi.",
+      "rule": "Ega kim? nima?; kesim nima qildi? qanday?; to‘ldiruvchi kimni/nimani?; aniqlovchi qanday/qaysi?; hol qayerda/qachon/qanday? so‘roqlariga javob beradi.",
+      "real_life": "Gap bo‘laklarini bilish fikrni aniq yozish, tinish belgilarini qo‘yish va matnni tahlil qilishga yordam beradi."
+    },
+    "podcast_text": "Gapni kichik sahna deb tasavvur qil. Ega sahnadagi bosh qahramon: kim yoki nima haqida gap ketmoqda? Kesim esa qahramon nima qilganini yoki qanday ekanini aytadi. Masalan, Zukko kitob o‘qidi gapida Zukko ega, o‘qidi kesim, kitob esa to‘ldiruvchi. Aniqlovchi predmetning belgisini, hol esa harakatning joyi, payti yoki tarzini ko‘rsatadi. Shu savollar bilan gapni osongina ajratasan.",
+    "quiz": [
+      {"prompt": "‘Ali yugurdi’ gapida ega qaysi?", "options": [
+        {"label": "A", "text": "Ali", "misconception": null},
+        {"label": "B", "text": "yugurdi", "misconception": "‘Yugurdi’ nima qildi? so‘rog‘iga javob berib kesim bo‘ladi. Kim yugurdi? — Ali, ega."},
+        {"label": "C", "text": "gapda ega yo‘q", "misconception": "Kim yugurdi? degan savolga ‘Ali’ javob beradi, demak ega bor."},
+        {"label": "D", "text": "ikkalasi ham ega", "misconception": "Ali — ega, yugurdi — kesim; ularning vazifasi turlicha."}
+      ], "correct": "A", "success_feedback": "To‘g‘ri: ‘Kim yugurdi?’ — Ali."},
+      {"prompt": "‘Bolalar bog‘da o‘ynadi’ gapida hol qaysi?", "options": [
+        {"label": "A", "text": "Bolalar", "misconception": "Bolalar ‘kim?’ so‘rog‘iga javob berib ega bo‘ladi."},
+        {"label": "B", "text": "bog‘da", "misconception": null},
+        {"label": "C", "text": "o‘ynadi", "misconception": "O‘ynadi ‘nima qildi?’ — kesim. ‘Qayerda?’ — bog‘da, hol."},
+        {"label": "D", "text": "gapda hol yo‘q", "misconception": "‘Qayerda o‘ynadi?’ so‘rog‘iga bog‘da javob beradi, bu o‘rin holi."}
+      ], "correct": "B", "success_feedback": "Ha: ‘qayerda?’ — bog‘da, o‘rin holi."},
+      {"prompt": "‘Men qiziqarli kitobni o‘qidim’ gapida aniqlovchi qaysi?", "options": [
+        {"label": "A", "text": "Men", "misconception": "‘Men’ kim? so‘rog‘iga javob berib ega."},
+        {"label": "B", "text": "kitobni", "misconception": "‘Kitobni’ nimani? so‘rog‘iga javob berib to‘ldiruvchi."},
+        {"label": "C", "text": "o‘qidim", "misconception": "‘O‘qidim’ nima qildim? so‘rog‘iga javob berib kesim."},
+        {"label": "D", "text": "qiziqarli", "misconception": null}
+      ], "correct": "D", "success_feedback": "To‘g‘ri: ‘qanday kitob?’ — qiziqarli, aniqlovchi."}
+    ]
+  },
+  "present_simple": {
+    "intent": {"grade": 5, "subject": "ingliz tili", "topic": "Present Simple", "topic_key": "present_simple"},
+    "explanation": {
+      "metaphor": "Present Simple — odatlar kundaligi. Har kuni, odatda yoki doim takrorlanadigan ishlarni shu zamonda yozamiz.",
+      "rule": "I/you/we/they + verb; he/she/it + verb-s. Inkor: do not/does not; so‘roq: Do/Does ...?",
+      "real_life": "Kun tartibi, doimiy faktlar va jadvalni aytishda: I go to school. The sun rises in the east."
+    },
+    "podcast_text": "Present Simple odatlar va doimiy faktlar zamoni. Men har kuni maktabga boraman desak, I go to school deymiz. He, she yoki it bilan fe’lga odatda s qo‘shiladi: She reads. Inkor gapda do not yoki does not ishlatamiz. Does kelganda asosiy fe’lga s qo‘shilmaydi: He does not play. So‘roq ham Do yoki Does bilan boshlanadi. Signal so‘zlari: always, usually, often va every day.",
+    "quiz": [
+      {"prompt": "She ___ books every day.", "options": [
+        {"label": "A", "text": "read", "misconception": "She uchinchi shaxs birlik; tasdiq gapda fe’lga -s qo‘shiladi."},
+        {"label": "B", "text": "reads", "misconception": null},
+        {"label": "C", "text": "reading", "misconception": "-ing davomiy zamonga xos. ‘Every day’ odatni ko‘rsatadi, Present Simple kerak."},
+        {"label": "D", "text": "is read", "misconception": "Bu passiv tuzilishga o‘xshaydi. Odatdagi faol harakat uchun ‘reads’ yetarli."}
+      ], "correct": "B", "success_feedback": "Correct: she + read + s = reads."},
+      {"prompt": "They ___ football on Sundays.", "options": [
+        {"label": "A", "text": "plays", "misconception": "-s faqat he/she/it bilan. They bilan fe’lning asosiy shakli ishlatiladi."},
+        {"label": "B", "text": "play", "misconception": null},
+        {"label": "C", "text": "is playing", "misconception": "They bilan ‘is’ ham mos emas; Sundays takroriy odatni ko‘rsatadi."},
+        {"label": "D", "text": "played", "misconception": "Played o‘tgan zamon. Sundays bu yerda hozirgi odat."}
+      ], "correct": "B", "success_feedback": "Correct: they play — fe’lga -s qo‘shilmaydi."},
+      {"prompt": "To‘g‘ri so‘roq gapni tanlang.", "options": [
+        {"label": "A", "text": "Does he likes tea?", "misconception": "Does allaqachon uchinchi shaxs belgisini olgan, shuning uchun asosiy fe’l ‘like’ bo‘ladi."},
+        {"label": "B", "text": "Do he like tea?", "misconception": "He bilan yordamchi fe’l ‘does’, ‘do’ emas."},
+        {"label": "C", "text": "Does he like tea?", "misconception": null},
+        {"label": "D", "text": "He does like tea?", "misconception": "Oddiy so‘roqda yordamchi fe’l ega oldiga chiqadi: Does he ...?"}
+      ], "correct": "C", "success_feedback": "Correct: Does + he + base verb ‘like’."}
+    ]
+  }
+}
